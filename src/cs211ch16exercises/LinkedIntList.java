@@ -14,6 +14,50 @@ public class LinkedIntList {
         front = null;
     }
     
+    /**
+     * Returns boolean value representing whether the list is a perfect stutter:
+     * each value is doubles in the list
+     * @return boolean
+     */
+    public boolean isPerfectStutter() {
+        ListNode current = this.front;
+        boolean perfect = true;
+        
+        // 0 and 1 element list is automatically false since at least 2 are needed
+        if (this.size() == 0 || this.size() == 1) {
+            return false;
+        }
+        
+        while (current != null) {
+            if (current.data != current.next.data) {
+                perfect = false;
+            }
+            current = current.next.next;
+        }
+        
+        return perfect;
+    }
+    
+    /**
+     * If list is a perfect stutter, this method will remove the
+     * stutter-ification:  removes the second, duplicate entry from the list.
+     * isPerfectStutter() will return false after this method is called.
+     */
+    public void undoStutter() {
+        ListNode current = this.front;
+        int index = 0;
+        
+        if (this.isPerfectStutter()) {
+            while (current != null) {
+                if (index % 2 == 0) {
+                    this.remove(index);
+                }
+                current = current.next;
+                index++;
+            }
+        }
+    }
+    
     // ADD ADDITIONAL METHODS (Exercises solutions) HERE (4-18)
     // Exercise 2
     /**

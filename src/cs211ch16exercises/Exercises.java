@@ -20,31 +20,41 @@ public class Exercises
         
 //        for (ListNode temp = B; temp.next != null; temp=temp.next)
 //            System.out.print(" " + temp.data);
-        System.out.println(A.toString());
-        System.out.println(A.lastIndexOf(8));   // 5
-        System.out.println(A.lastIndexOf(47));  // -1
-        System.out.println(A.lastIndexOf(17));  // 4
-        System.out.println(B);
-        System.out.println(B.countDuplicates());    // 7
-        System.out.println(A.hasTwoConsecutive());  // false
-        System.out.println(B.hasTwoConsecutive());  // true
-        System.out.println(A.size());               // 6
-        System.out.println(A.deleteBack());         // 8
-        System.out.println(A);
-        System.out.println(A.size());               // 5
-        A.switchPairs();
-        System.out.println(A);
-        System.out.println(A.min());
+//        System.out.println(A.toString());
+//        System.out.println(A.lastIndexOf(8));   // 5
+//        System.out.println(A.lastIndexOf(47));  // -1
+//        System.out.println(A.lastIndexOf(17));  // 4
+//        System.out.println(B);
+//        System.out.println(B.countDuplicates());    // 7
+//        System.out.println(A.hasTwoConsecutive());  // false
+//        System.out.println(B.hasTwoConsecutive());  // true
+//        System.out.println(A.size());               // 6
+//        System.out.println(A.deleteBack());         // 8
+//        System.out.println(A);
+//        System.out.println(A.size());               // 5
+//        A.switchPairs();
+//        System.out.println(A);
+//        System.out.println(A.min());
         //for (Integer i: B) System.out.print(i.toString() + ", ");
         
-        A.stutter();
-        System.out.println(A.toString());
-        A.stretch(0);
-        System.out.println(A);
-        A.add(1);  A.add(8);   A.add(19);  A.add(4);   A.add(17); A.add(8);
-        A.stretch(6);
-        System.out.println(A);
-        A.removaAll(8);
-        System.out.println(A);
+//        A.stutter();
+//        System.out.println(A.toString());
+//        A.stretch(0);
+//        System.out.println(A);
+//        A.add(1);  A.add(8);   A.add(19);  A.add(4);   A.add(17); A.add(8);
+//        A.stretch(6);
+//        System.out.println(A);
+        //A.removaAll(8);
+        //System.out.println(A);
+         LinkedIntList intList = new LinkedIntList();
+         System.out.println(intList.isPerfectStutter()); // false
+         intList.add(1); intList.add(1); 
+         intList.add(2); intList.add(2);
+         System.out.println(intList); // [1, 1, 2, 2]
+         System.out.println(intList.isPerfectStutter()); // true
+         intList.undoStutter(); 
+         System.out.println(intList); // [1, 2]
+         System.out.println(intList.isPerfectStutter()); // false
+
     }
 }
